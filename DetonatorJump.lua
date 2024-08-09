@@ -4,7 +4,7 @@ if not player then return end
 local delay = 0 -- delay in seconds between primary and secondary attacks
 local lastAttackTime = 0
 local shouldClickAttack2 = false
-local angleOffset = 205 -- angle offset in degrees for the back direction
+local angleOffset = 205 -- angle offset in degrees for the back direction. 205 cuz 180 wasnt properly aligned
 local pitchOffset = 30 -- pitch offset in degrees for vertical adjustment
 
 local function ShootBehind(cmd)
