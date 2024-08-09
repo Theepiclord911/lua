@@ -1,7 +1,3 @@
-local libLoaded, Lib = pcall(require, "lnxLib")
-assert(libLoaded, "LNXlib not found, please install it!")
-assert(Lib.GetVersion() >= 0.89, "LNXlib version is too old, please update it!")
-
 local player = entities.GetLocalPlayer()
 if not player then return end
 
