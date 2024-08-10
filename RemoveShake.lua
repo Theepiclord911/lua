@@ -1,6 +1,6 @@
 client.RemoveConVarProtection("sv_cheats") --bypass security(bypass sv_cheats check)
 client.SetConVar("sv_cheats", 1, true)
-local dist = 150 -- how close the projectile needs to be for shake_stop to be triggered (hammer units)
+local dist = 300 -- how close the projectile needs to be for shake_stop to be triggered (hammer units)
 local shake_duration = 0.1 -- duration to continue spamming shake_stop after projectile is gone (seconds)
 
 local demoman_projectile_class_names = {
