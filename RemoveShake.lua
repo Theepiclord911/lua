@@ -1,10 +1,12 @@
 client.RemoveConVarProtection("sv_cheats") --bypass security(bypass sv_cheats check)
 client.SetConVar("sv_cheats", 1, true)
-local dist = 300 -- how close the projectile needs to be for shake_stop to be triggered (hammer units)
+local dist_pipebomb = 300 -- how close the projectile needs to be for shake_stop to be triggered (hammer units)
+local dist_energyball = 700 -- how close the energy ball needs to be for shake_stop to be triggered (hammer units)
 local shake_duration = 0.1 -- duration to continue spamming shake_stop after projectile is gone (seconds)
 
-local demoman_projectile_class_names = {
-    "CTFGrenadePipebombProjectile"
+local projectile_class_names = {
+    ["CTFGrenadePipebombProjectile"] = dist_pipebomb,
+    ["CTFProjectile_EnergyBall"] = dist_energyball
 }
 
 local projectile_timestamps = {}
@@ -24,9 +26,9 @@ local function SpamShakeStop(cmd)
 
     local current_time = globals.CurTime()
 
-    for _, class_name in ipairs(demoman_projectile_class_names) do
+    for class_name, min_distance in pairs(projectile_class_names) do
         for _, p in pairs(entities.FindByClass(class_name)) do 
-            if not p:IsDormant() and IsProjectileClose(lPlayer, p, dist) then
+            if not p:IsDormant() and IsProjectileClose(lPlayer, p, min_distance) then
                 projectile_timestamps[p:GetIndex()] = current_time
             end
         end
