@@ -1,3 +1,4 @@
+--- NOT FINISHED DONT USE IF UR NOT GONNA FINISH IT
 ---@type boolean, lnxLib
 local libLoaded, lnxLib = pcall(require, "lnxLib")
 assert(libLoaded, "lnxLib not found, please install it!")
