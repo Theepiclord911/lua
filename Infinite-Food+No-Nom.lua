@@ -2,7 +2,8 @@
     Infinite Food automation(baan) + no nom(theepiclord911)
     Author: LNX (github.com/lnx00)
     Dependencies: LNXlib (github.com/lnx00/Lmaobox-Library)
-    bug 1: eats sandvich when lmaobox gui is open
+    bug 1: eats sandvich when lmaobox gui is open and u click
+    bug 2: if u taunt with sandvich in hand youll say "Yes" voice command
 ]]
 
 ---@type boolean, lnxLib
