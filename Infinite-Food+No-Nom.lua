@@ -13,7 +13,7 @@ assert(Lib.GetVersion() >= 1.00, "LNXlib version is too old, please update it!")
 
 local KeyHelper, Timer, WPlayer = Lib.Utils.KeyHelper, Lib.Utils.Timer, Lib.TF2.WPlayer
 
-local key = KeyHelper.new(MOUSE_LEFT)
+local key = KeyHelper.new(MOUSE_LEFT) -- Key
 local tauntTimer = Timer.new()
 
 local commandExecuted = false
