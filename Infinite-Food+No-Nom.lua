@@ -1,6 +1,5 @@
 --[[
-    Infinite Food automation
-    Credits: Baan
+    Infinite Food automation(baan) + no nom(theepiclord911)
     Author: LNX (github.com/lnx00)
     Dependencies: LNXlib (github.com/lnx00/Lmaobox-Library)
 ]]
