@@ -2,6 +2,7 @@
     Infinite Food automation(baan) + no nom(theepiclord911)
     Author: LNX (github.com/lnx00)
     Dependencies: LNXlib (github.com/lnx00/Lmaobox-Library)
+    bug 1: eats sandvich when lmaobox gui is open
 ]]
 
 ---@type boolean, lnxLib
