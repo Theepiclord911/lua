@@ -1,5 +1,6 @@
 --[[
-    Infinite Food automation(baan) + no nom(theepiclord911)
+    Infinite Food automation
+    Credits: Baan
     Author: LNX (github.com/lnx00)
     Dependencies: LNXlib (github.com/lnx00/Lmaobox-Library)
     bug 1: eats sandvich when lmaobox gui is open and u click
@@ -20,14 +21,15 @@ local commandExecuted = false
 local tauntStartTime = 0
 local delay = 1.0  -- 1.0 second delay
 
-local function isHeavyEatingSandvich(localPlayer)
+local function isHeavyEatingFood(localPlayer)
     local weapon = localPlayer:GetActiveWeapon()
     if not weapon then return false end
 
     local weaponID = weapon:GetPropInt("m_iItemDefinitionIndex")
     local isTaunting = localPlayer:InCond(TFCond_Taunting)
+    local foodItems = {42, 159, 1190, 311, 433, 863, 1002}
 
-    return localPlayer:GetPropInt("m_iClass") == 6 and weaponID == 42 and isTaunting  -- 42 is the item definition index for Sandvich
+    return localPlayer:GetPropInt("m_iClass") == 6 and table.contains(foodItems, weaponID) and isTaunting
 end
 
 ---@param userCmd UserCmd
@@ -50,8 +52,8 @@ local function OnUserCmd(userCmd)
         end
     end
 
-    -- New functionality for Heavy eating Sandvich
-    if isHeavyEatingSandvich(localPlayer) then
+    -- New functionality for Heavy eating food items
+    if isHeavyEatingFood(localPlayer) then
         if not commandExecuted then
             if tauntStartTime == 0 then
                 tauntStartTime = globals.RealTime()
